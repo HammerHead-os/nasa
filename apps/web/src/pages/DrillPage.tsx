@@ -207,7 +207,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
         <div
           style={{
             padding: '12px 16px',
-            background: '#0A0C0E',
+            background: 'var(--bg)',
             borderBottom: '2px solid var(--rust)',
           }}
         >
@@ -219,7 +219,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
             style={{
               fontSize: 'clamp(15px, 2vw, 20px)',
               fontWeight: 700,
-              color: '#EAE6DF',
+              color: 'var(--ink-light)',
               marginTop: 4,
               letterSpacing: '0.02em',
             }}
@@ -244,7 +244,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
 
         {/* Spatial map */}
         <div
-          style={{ position: 'relative', flex: '1 1 42%', minHeight: 260, background: '#090B0D' }}
+          style={{ position: 'relative', flex: '1 1 42%', minHeight: 260, background: 'var(--bg)' }}
           role="img"
           aria-label={`NISAR September thaw browse with ${ranked.length} ranked drill candidates. Use the table below to select sites.`}
         >
@@ -283,13 +283,13 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
                     cy={y}
                     r={sel ? 2.8 : 2.1}
                     fill={fill}
-                    stroke={sel ? '#EAE6DF' : 'rgba(12,14,16,0.9)'}
+                    stroke={sel ? 'var(--ink-light)' : 'rgba(12,14,16,0.9)'}
                     strokeWidth={sel ? 0.55 : 0.35}
                   />
                   <text
                     x={x + 2.8}
                     y={y - 1.6}
-                    fill="#EAE6DF"
+                    fill="var(--ink-light)"
                     fontSize="2.4"
                     fontFamily="IBM Plex Mono, monospace"
                     fontWeight="700"
@@ -307,9 +307,9 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
               left: 10,
               bottom: 10,
               padding: '6px 8px',
-              background: 'rgba(11,14,17,0.88)',
+              background: 'var(--panel)',
               fontSize: 10,
-              color: '#C9C5BD',
+              color: 'var(--ink-muted)',
               display: 'flex',
               gap: 12,
             }}
@@ -343,7 +343,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }} aria-label="Ranked drill candidates">
             <caption className="sr-only">Ranked sites with browse change, settlement, and recommendation</caption>
             <thead>
-              <tr className="mono" style={{ background: '#111418', color: 'var(--ink-muted)', textAlign: 'left' }}>
+              <tr className="mono" style={{ background: 'var(--panel)', color: 'var(--ink-muted)', textAlign: 'left' }}>
                 <th style={th} scope="col">#</th>
                 <th style={th} scope="col">SITE</th>
                 <th style={th} scope="col">LAT / LON</th>
@@ -393,7 +393,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
                     <td style={td} className="mono">
                       {c.nisarCueStrength.toFixed(2)}
                     </td>
-                    <td style={{ ...td, color: Math.abs(c.deltaSettleCm) >= DISAGREE_THRESHOLD_CM ? '#FF8A65' : '#EAE6DF' }} className="mono">
+                    <td style={{ ...td, color: Math.abs(c.deltaSettleCm) >= DISAGREE_THRESHOLD_CM ? '#FF8A65' : 'var(--ink-light)' }} className="mono">
                       {c.deltaSettleCm > 0 ? '+' : ''}
                       {c.deltaSettleCm} cm
                     </td>
@@ -423,7 +423,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
           justifyContent: 'space-between',
           gap: 14,
           overflow: 'auto',
-          background: '#0E1114',
+          background: 'var(--panel)',
           minWidth: 0,
         }}
       >
@@ -435,7 +435,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
           <div
             style={{
               padding: '16px 18px',
-              background: '#141618',
+              background: 'var(--bg)',
               borderLeft: `4px solid ${actionColor(active.recommend)}`,
               marginBottom: 12,
             }}
@@ -479,10 +479,10 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
               climate + surface forcing from Page 03
             </div>
 
-            <div style={{ fontSize: 13, lineHeight: 1.5, color: '#C9C5BD' }}>{active.rationale}</div>
+            <div style={{ fontSize: 13, lineHeight: 1.5, color: 'var(--ink-muted)' }}>{active.rationale}</div>
 
             {active.recommend === 'DRILL' && active.coreDepthM != null && (
-              <div className="mono" style={{ marginTop: 10, fontSize: 11, color: '#8FB8C2' }}>
+              <div className="mono" style={{ marginTop: 10, fontSize: 11, color: 'var(--ice)' }}>
                 Core depth = max(ice-top {active.iceTopDepthM.toFixed(2)} m + 0.55, thaw {active.thawB2050M.toFixed(2)} m +
                 0.25) → {active.coreDepthM} m
               </div>
@@ -497,7 +497,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
               border: '1px solid var(--line)',
               marginBottom: 12,
               fontSize: 11,
-              color: '#C5C1B9',
+              color: 'var(--ink-muted)',
             }}
           >
             Browse proxy {radar.septHhDb} → {radar.novHhDb} · Δ {radar.deltaHhDb}. Not calibrated γ⁰.
@@ -508,7 +508,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
               <div className="mono" style={{ fontSize: 10, fontWeight: 700, color: 'var(--ink-muted)', marginBottom: 6 }}>
                 RANDOM CORES
               </div>
-              <div className="mono" style={{ fontSize: 12, color: '#EAE6DF', lineHeight: 1.45 }}>
+              <div className="mono" style={{ fontSize: 12, color: 'var(--ink-light)', lineHeight: 1.45 }}>
                 ~5 random cores
                 <br />
                 MAE {random.held_out_2050_mae_cm} cm
@@ -522,7 +522,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
               <div className="mono" style={{ fontSize: 10, fontWeight: 700, color: 'var(--rust)', marginBottom: 6 }}>
                 THIS PLAN
               </div>
-              <div className="mono" style={{ fontSize: 12, color: '#EAE6DF', lineHeight: 1.45 }}>
+              <div className="mono" style={{ fontSize: 12, color: 'var(--ink-light)', lineHeight: 1.45 }}>
                 1 core @ {hero.coreDepthM ?? '—'} m
                 <br />
                 {coreOpt?.cost_credits ?? 100} credits
@@ -542,18 +542,18 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
               width: '100%',
               textAlign: 'left',
               padding: '9px 12px',
-              background: '#111418',
+              background: 'var(--panel)',
               border: '1px solid var(--line)',
               fontSize: 11,
               fontWeight: 700,
               cursor: 'pointer',
-              color: '#EAE6DF',
+              color: 'var(--ink-light)',
             }}
           >
             {lineageOpen ? '▾' : '▸'} HOW THIS WAS COMPUTED
           </button>
           {lineageOpen && (
-            <div className="mono" style={{ padding: '12px 14px', background: '#0A0C0E', fontSize: 10.5, lineHeight: 1.55, color: '#C9C5BD' }}>
+            <div className="mono" style={{ padding: '12px 14px', background: 'var(--bg)', fontSize: 10.5, lineHeight: 1.55, color: 'var(--ink-muted)' }}>
               <div>1. Granule SEPT: {radar.granuleUrSept}</div>
               <div>2. Granule NOV: {radar.granuleUrNov}</div>
               <div>
@@ -582,7 +582,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
 
         <div style={{ borderTop: '1px solid var(--line)', paddingTop: 12 }}>
           {savedStamp && (
-            <div className="mono" style={{ fontSize: 10, color: '#8FB8C2', marginBottom: 8 }}>
+            <div className="mono" style={{ fontSize: 10, color: 'var(--ice)', marginBottom: 8 }}>
               Plan saved · {savedStamp}
             </div>
           )}
@@ -629,7 +629,7 @@ const td: CSSProperties = { padding: '8px 8px', verticalAlign: 'top' };
 const cta: CSSProperties = {
   padding: '9px 12px',
   background: 'transparent',
-  color: '#EAE6DF',
+  color: 'var(--ink-light)',
   border: '1px solid var(--line-strong)',
   fontSize: 11,
   fontWeight: 700,
@@ -646,7 +646,7 @@ const ctaPrimary: CSSProperties = {
 function Meta({ label, value, span }: { label: string; value: string; span?: boolean }) {
   return (
     <div style={{ gridColumn: span ? '1 / -1' : undefined }}>
-      <div className="mono" style={{ fontSize: 9, color: '#8FB8C2', fontWeight: 700, letterSpacing: '0.06em' }}>
+      <div className="mono" style={{ fontSize: 9, color: 'var(--ice)', fontWeight: 700, letterSpacing: '0.06em' }}>
         {label}
       </div>
       <div style={{ fontSize: 13, fontWeight: 600, marginTop: 2 }}>{value}</div>
@@ -656,8 +656,8 @@ function Meta({ label, value, span }: { label: string; value: string; span?: boo
 
 function ScoreCell({ label, value, tone }: { label: string; value: string; tone: string }) {
   return (
-    <div style={{ padding: '10px 12px', background: '#0A0C0E' }}>
-      <div className="mono" style={{ fontSize: 9, color: '#8FB8C2', marginBottom: 4 }}>
+    <div style={{ padding: '10px 12px', background: 'var(--bg)' }}>
+      <div className="mono" style={{ fontSize: 9, color: 'var(--ice)', marginBottom: 4 }}>
         {label}
       </div>
       <div className="mono" style={{ fontSize: 15, fontWeight: 700, color: tone }}>

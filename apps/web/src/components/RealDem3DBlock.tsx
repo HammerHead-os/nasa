@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import demRaw from '../data/realTerrainDem.json';
-import { prefersReducedMotion } from '../lib/a11y';
+import { cssVar, prefersReducedMotion } from '../lib/a11y';
 import { assetUrl } from '../lib/assetUrl';
 
 interface DemData {
@@ -66,8 +66,9 @@ export function RealDem3DBlock({
     if (!container) return;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('#0b1016');
-    scene.fog = new THREE.FogExp2(0x0b1016, 0.038);
+    const stageBg = cssVar('--bg', '#F2F5F6');
+    scene.background = new THREE.Color(stageBg);
+    scene.fog = new THREE.FogExp2(new THREE.Color(stageBg).getHex(), 0.018);
 
     const initW = Math.max(320, container.clientWidth);
     const initH = Math.max(340, container.clientHeight);
@@ -432,7 +433,7 @@ export function RealDem3DBlock({
   }, []);
 
   return (
-    <div style={{ width: '100%', height: '100%', minHeight: 400, position: 'relative', background: '#090B0D' }}>
+    <div style={{ width: '100%', height: '100%', minHeight: 400, position: 'relative', background: 'var(--bg)' }}>
       <div
         ref={mountRef}
         tabIndex={0}
@@ -499,8 +500,8 @@ export function RealDem3DBlock({
           top: 14,
           right: 14,
           fontSize: 11,
-          color: '#EAE6DF',
-          background: 'rgba(11,14,17,0.84)',
+          color: 'var(--ink-light)',
+          background: 'var(--panel)',
           padding: '6px 10px',
           border: '1px solid var(--line-strong)',
           pointerEvents: 'none',
@@ -515,8 +516,8 @@ export function RealDem3DBlock({
           left: 14,
           bottom: 14,
           fontSize: 10,
-          color: '#C5C1B9',
-          background: 'rgba(11,14,17,0.84)',
+          color: 'var(--ink-muted)',
+          background: 'var(--panel)',
           padding: '6px 10px',
           border: '1px solid var(--line-strong)',
           pointerEvents: 'none',

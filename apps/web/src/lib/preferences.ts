@@ -32,8 +32,8 @@ export interface AccessModeOption {
 }
 
 export const THEMES: ThemeOption[] = [
-  { id: 'horizon', name: 'NASA Horizon', blurb: 'Dark charcoal + NASA red (default).' },
-  { id: 'daylight', name: 'Daylight', blurb: 'Light paper pages for bright rooms.' },
+  { id: 'horizon', name: 'Light', blurb: 'Cool light paper, dark ink, coral accent (default).' },
+  { id: 'daylight', name: 'Daylight', blurb: 'Warm light pages for bright rooms.' },
   { id: 'arctic', name: 'Arctic Ice', blurb: 'Cool slate and cyan, winter field feel.' },
   { id: 'midnight', name: 'Midnight DEM', blurb: 'Deep navy for radar and 3D focus.' },
   { id: 'field', name: 'Field Desk', blurb: 'Warm charcoal with amber caution accents.' },
@@ -135,6 +135,6 @@ export function applyDocumentPrefs(theme: ThemeId, access: AccessModeId) {
   root.dataset.reduceMotion = forceMotionOff ? 'true' : 'false';
   root.dataset.verboseA11y = access === 'screen-reader' ? 'true' : 'false';
 
-  const light = theme === 'daylight' || theme === 'highvis';
+  const light = theme === 'horizon' || theme === 'daylight' || theme === 'highvis';
   root.style.colorScheme = light ? 'light' : 'dark';
 }

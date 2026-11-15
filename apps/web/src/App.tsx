@@ -87,7 +87,7 @@ export default function App() {
         style={{
           height: 52,
           flexShrink: 0,
-          background: '#0C0E10',
+          background: 'var(--bg)',
           borderBottom: '1px solid var(--line)',
           padding: '0 18px',
           display: 'flex',

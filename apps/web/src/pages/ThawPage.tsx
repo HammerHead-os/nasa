@@ -11,7 +11,7 @@ import {
   type YearSnapshot,
 } from '../lib/livePermafrostEngine';
 import { DISAGREE_THRESHOLD_CM, twinFromColumns, type TwinState } from '../lib/pipeline';
-import { announce, prefersReducedMotion } from '../lib/a11y';
+import { announce, cssVar, prefersReducedMotion } from '../lib/a11y';
 import { assetUrl } from '../lib/assetUrl';
 
 interface Props {
@@ -73,7 +73,7 @@ function SliderRow({
 }) {
   return (
     <div>
-      <div className="mono" style={{ fontSize: 11, color: '#EAE6DF', fontWeight: 700, marginBottom: 5, display: 'flex', alignItems: 'center', gap: 4 }}>
+      <div className="mono" style={{ fontSize: 11, color: 'var(--ink-light)', fontWeight: 700, marginBottom: 5, display: 'flex', alignItems: 'center', gap: 4 }}>
         <span>{label}</span>
         {tip && tipTitle ? <InfoTip title={tipTitle}>{tip}</InfoTip> : null}
       </div>
@@ -105,11 +105,11 @@ function MetricChip({ label, a, b, unit, warn }: { label: string; a: number; b: 
         {label}
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'baseline' }}>
-        <span className="mono" style={{ fontSize: 12, color: '#8FB8C2' }}>
+        <span className="mono" style={{ fontSize: 12, color: 'var(--ice)' }}>
           A {a}
           {unit}
         </span>
-        <span className="mono" style={{ fontSize: 12, color: hot ? '#FF6B42' : '#EAE6DF' }}>
+        <span className="mono" style={{ fontSize: 12, color: hot ? '#FF6B42' : 'var(--ink-light)' }}>
           B {b}
           {unit}
         </span>
@@ -505,7 +505,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
 
       ctx.fillStyle = 'rgba(11,14,17,0.78)';
       ctx.fillRect(0, surfDatumY - 4, 34, groundH + 12);
-      ctx.fillStyle = '#EAE6DF';
+      ctx.fillStyle = '#F4F7F8';
       ctx.font = '600 10px DM Mono, monospace';
       [0, 1, 2, 3].forEach((dm) => {
         const y = surfDatumY + dm * mToPx;
@@ -561,8 +561,8 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
       style={{
         width: '100%',
         marginTop: 6,
-        background: '#0E1114',
-        color: '#EAE6DF',
+        background: 'var(--panel)',
+        color: 'var(--ink-light)',
         border: '1px solid var(--line)',
         padding: '5px 8px',
         fontSize: 11,
@@ -584,7 +584,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
         <div
           style={{
             padding: '12px 16px',
-            background: '#0A0C0E',
+            background: 'var(--bg)',
             borderBottom: '2px solid var(--rust)',
             display: 'flex',
             flexWrap: 'wrap',
@@ -597,7 +597,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
             <div className="mono" style={{ fontSize: 10, color: 'var(--rust)', fontWeight: 700, letterSpacing: '0.08em' }}>
               OPTIONAL SCENARIO · NOT OBSERVED
             </div>
-            <div className="mono" style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 700, color: '#EAE6DF', marginTop: 4 }}>
+            <div className="mono" style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 700, color: 'var(--ink-light)', marginTop: 4 }}>
               What-if Δ settlement 2050 = {deltaSettle2050 > 0 ? '+' : ''}
               {deltaSettle2050} cm · <span style={{ color: 'var(--rust)' }}>{drillVerdict}</span>
             </div>
@@ -634,7 +634,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
         <div
           style={{
             padding: '9px 16px',
-            background: '#111418',
+            background: 'var(--panel)',
             borderBottom: '1px solid var(--line)',
             display: 'flex',
             alignItems: 'center',
@@ -726,7 +726,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
           <div style={{ background: 'var(--bg)', display: 'flex', flexDirection: 'column', minWidth: 0 }}>
             <div style={{ padding: '8px 12px', borderBottom: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
               <div>
-                <div className="mono" style={{ fontSize: 10, color: '#8FB8C2', fontWeight: 700 }}>
+                <div className="mono" style={{ fontSize: 10, color: 'var(--ice)', fontWeight: 700 }}>
                   EARTH A — {earthA.substrate.toUpperCase()}, {earthA.icePct}% ICE
                 </div>
                 <div style={{ fontSize: 11, color: 'var(--ink-muted)' }}>Click soil to probe °C</div>
@@ -777,7 +777,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
             className="mono"
             style={{
               padding: '7px 14px',
-              background: '#0E1114',
+              background: 'var(--panel)',
               borderTop: '1px solid var(--line)',
               fontSize: 10.5,
               color: 'var(--ink-muted)',
@@ -788,11 +788,11 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
             }}
           >
             <span>
-              SENSOR: <strong style={{ color: '#EAE6DF' }}>{probeDepthM?.toFixed(1)} m</strong>
+              SENSOR: <strong style={{ color: 'var(--ink-light)' }}>{probeDepthM?.toFixed(1)} m</strong>
             </span>
             <span>
               A:{' '}
-              <strong style={{ color: '#8FB8C2' }}>
+              <strong style={{ color: 'var(--ice)' }}>
                 {snapA.tempProfileC[probeIdx]}°C, {Math.round((snapA.unfrozenFrac[probeIdx] ?? 0) * 100)}% liq
               </strong>
             </span>
@@ -804,7 +804,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
             </span>
             <span>
               SEPT MEAN:{' '}
-              <strong style={{ color: '#EAE6DF' }}>
+              <strong style={{ color: 'var(--ink-light)' }}>
                 A {snapA.meanSeptTC}°C / B {snapB.meanSeptTC}°C
               </strong>
             </span>
@@ -863,10 +863,11 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                     padding: '8px 2px',
                     fontSize: 10,
                     border: 'none',
-                    background: active ? '#EAE6DF' : 'var(--panel)',
-                    color: active ? '#0C0E10' : 'var(--ink-muted)',
+                    background: active ? 'var(--rust)' : 'var(--panel)',
+                    color: active ? '#fff' : 'var(--ink-muted)',
                     fontWeight: active ? 700 : 500,
                     cursor: 'pointer',
+                    borderBottom: active ? 'none' : '1px solid var(--line)',
                   }}
                 >
                   {label}
@@ -962,7 +963,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                       padding: '7px',
                       fontSize: 11,
                       background: editEarth === id ? (id === 'A' ? '#8FB8C2' : 'var(--rust)') : 'transparent',
-                      color: editEarth === id ? (id === 'A' ? '#0C0E10' : '#fff') : '#EAE6DF',
+                      color: editEarth === id ? (id === 'A' ? 'var(--ink-dark)' : '#fff') : 'var(--ink-light)',
                       border: '1px solid var(--line-strong)',
                       fontWeight: 700,
                       cursor: 'pointer',
@@ -993,8 +994,8 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                       style={{
                         padding: '6px 8px',
                         fontSize: 10.5,
-                        background: activeCol.substrate === id ? '#EAE6DF' : 'transparent',
-                        color: activeCol.substrate === id ? '#0C0E10' : '#EAE6DF',
+                        background: activeCol.substrate === id ? 'var(--ink-light)' : 'transparent',
+                        color: activeCol.substrate === id ? 'var(--ink-dark)' : 'var(--ink-light)',
                         border: '1px solid var(--line)',
                         fontWeight: activeCol.substrate === id ? 700 : 400,
                         cursor: 'pointer',
@@ -1037,7 +1038,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                     if (editEarth === 'A') setEarthB({ ...earthA });
                     else setEarthA({ ...earthB });
                   }}
-                  style={{ padding: '7px', fontSize: 10, background: 'transparent', color: '#EAE6DF', border: '1px solid var(--line)', cursor: 'pointer' }}
+                  style={{ padding: '7px', fontSize: 10, background: 'transparent', color: 'var(--ink-light)', border: '1px solid var(--line)', cursor: 'pointer' }}
                 >
                   Copy → other Earth
                 </button>
@@ -1058,13 +1059,13 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
           {drawer === 'events' && (
             <div style={{ padding: '14px', background: 'var(--panel)', border: '1px solid var(--line)', display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ padding: '10px 12px', border: `1px solid ${params.wildfireYear ? '#E31937' : 'var(--line-strong)'}`, background: params.wildfireYear ? 'rgba(200,90,50,0.18)' : 'transparent' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#EAE6DF' }}>Tundra wildfire</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink-light)' }}>Tundra wildfire</div>
                 <div style={{ fontSize: 11.5, color: 'var(--ink-muted)', marginTop: 2 }}>Burns ~80% of moss + darkens surface from that year onward.</div>
                 {eventYearSelect('wildfireYear', params.wildfireYear !== null, params.wildfireYear ?? 2031)}
               </div>
 
               <div style={{ padding: '10px 12px', border: `1px solid ${params.heatwaveYear ? '#E31937' : 'var(--line-strong)'}`, background: params.heatwaveYear ? 'rgba(200,90,50,0.18)' : 'transparent' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#EAE6DF' }}>Extreme heatwave (single year)</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink-light)' }}>Extreme heatwave (single year)</div>
                 <div style={{ fontSize: 11.5, color: 'var(--ink-muted)', marginTop: 2 }}>Pick year + intensity — irreversible deeper thaw that year.</div>
                 {eventYearSelect('heatwaveYear', params.heatwaveYear !== null, params.heatwaveYear ?? 2036)}
                 {params.heatwaveYear !== null && (
@@ -1082,13 +1083,13 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
               </div>
 
               <div style={{ padding: '10px 12px', border: `1px solid ${params.floodYear ? '#5A8AA8' : 'var(--line-strong)'}`, background: params.floodYear ? 'rgba(90,138,168,0.18)' : 'transparent' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#EAE6DF' }}>Summer flood / standing water</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink-light)' }}>Summer flood / standing water</div>
                 <div style={{ fontSize: 11.5, color: 'var(--ink-muted)', marginTop: 2 }}>One wet summer: higher conductivity + warm ponding on the surface.</div>
                 {eventYearSelect('floodYear', params.floodYear !== null, params.floodYear ?? 2033)}
               </div>
 
               <div style={{ padding: '10px 12px', border: `1px solid ${params.earlyMeltYear ? '#8FB8C2' : 'var(--line-strong)'}`, background: params.earlyMeltYear ? 'rgba(143,184,194,0.15)' : 'transparent' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#EAE6DF' }}>Early spring snowmelt</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink-light)' }}>Early spring snowmelt</div>
                 <div style={{ fontSize: 11.5, color: 'var(--ink-muted)', marginTop: 2 }}>Snow vanishes early that year — spring sun hits bare ground sooner.</div>
                 {eventYearSelect('earlyMeltYear', params.earlyMeltYear !== null, params.earlyMeltYear ?? 2038)}
               </div>
@@ -1099,7 +1100,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                   textAlign: 'left',
                   padding: '10px 12px',
                   background: params.plowedWinterSnow ? 'rgba(143,184,194,0.2)' : 'transparent',
-                  color: '#EAE6DF',
+                  color: 'var(--ink-light)',
                   border: `1px solid ${params.plowedWinterSnow ? '#8FB8C2' : 'var(--line-strong)'}`,
                   cursor: 'pointer',
                 }}
@@ -1129,8 +1130,8 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                       style={{
                         padding: '7px 4px',
                         fontSize: 10,
-                        background: params.surfaceLoad === id ? '#EAE6DF' : 'transparent',
-                        color: params.surfaceLoad === id ? '#0C0E10' : '#EAE6DF',
+                        background: params.surfaceLoad === id ? 'var(--ink-light)' : 'transparent',
+                        color: params.surfaceLoad === id ? 'var(--ink-dark)' : 'var(--ink-light)',
                         border: '1px solid var(--line)',
                         fontWeight: params.surfaceLoad === id ? 700 : 400,
                         cursor: 'pointer',
@@ -1175,7 +1176,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                     ventilatedEmbankment: true,
                   })
                 }
-                style={{ marginTop: 4, padding: '8px', fontSize: 11, background: '#EAE6DF', color: '#0C0E10', border: 'none', fontWeight: 700, cursor: 'pointer' }}
+                style={{ marginTop: 4, padding: '8px', fontSize: 11, background: 'var(--ink-light)', color: 'var(--ink-dark)', border: 'none', fontWeight: 700, cursor: 'pointer' }}
               >
                 Stack full defense suite
               </button>
@@ -1184,7 +1185,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
 
           {drawer === 'lab' && (
             <div style={{ padding: '14px', background: 'var(--panel)', border: '1px solid var(--line)', display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div className="mono" style={{ fontSize: 11, color: '#EAE6DF', fontWeight: 700 }}>
+              <div className="mono" style={{ fontSize: 11, color: 'var(--ink-light)', fontWeight: 700 }}>
                 A/B LAB CONTROLS
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6 }}>
@@ -1196,21 +1197,21 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                     setEarthA(b);
                     setEarthB(a);
                   }}
-                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: '#EAE6DF', border: '1px solid var(--line)', cursor: 'pointer' }}
+                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: 'var(--ink-light)', border: '1px solid var(--line)', cursor: 'pointer' }}
                 >
                   Swap Earth A ↔ B
                 </button>
                 <button
                   className="mono"
                   onClick={() => setEarthB({ ...earthA })}
-                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: '#EAE6DF', border: '1px solid var(--line)', cursor: 'pointer' }}
+                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: 'var(--ink-light)', border: '1px solid var(--line)', cursor: 'pointer' }}
                 >
                   Clone A → B
                 </button>
                 <button
                   className="mono"
                   onClick={() => setEarthA({ ...earthB })}
-                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: '#EAE6DF', border: '1px solid var(--line)', cursor: 'pointer' }}
+                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: 'var(--ink-light)', border: '1px solid var(--line)', cursor: 'pointer' }}
                 >
                   Clone B → A
                 </button>
@@ -1222,7 +1223,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                     setP({ ...DEFAULT_SANDBOX_PARAMS, warmingBy2050C: 3.5 });
                     setYearIdx(24);
                   }}
-                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: '#EAE6DF', border: '1px solid var(--line)', cursor: 'pointer' }}
+                  style={{ padding: '8px', fontSize: 10.5, background: 'transparent', color: 'var(--ink-light)', border: '1px solid var(--line)', cursor: 'pointer' }}
                 >
                   Isol. ice-only Δ test
                 </button>
@@ -1241,13 +1242,13 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                 <span>Match moss + organics on B to A (isolate ice/substrate)</span>
               </label>
 
-              <div style={{ padding: '10px', background: '#0E1114', border: '1px solid var(--line)' }}>
+              <div style={{ padding: '10px', background: 'var(--panel)', border: '1px solid var(--line)' }}>
                 <div className="mono" style={{ fontSize: 10, color: 'var(--ink-muted)', marginBottom: 8 }}>
                   2050 OUTCOME CARD
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 12 }}>
                   <div>
-                    <div className="mono" style={{ color: '#8FB8C2', fontSize: 10 }}>
+                    <div className="mono" style={{ color: 'var(--ice)', fontSize: 10 }}>
                       EARTH A
                     </div>
                     <div>
@@ -1269,7 +1270,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                     </div>
                   </div>
                 </div>
-                <div className="mono" style={{ marginTop: 10, fontSize: 11, color: '#EAE6DF' }}>
+                <div className="mono" style={{ marginTop: 10, fontSize: 11, color: 'var(--ink-light)' }}>
                   B−A settle Δ: {(simB.snapshots[24].settlementCm - simA.snapshots[24].settlementCm).toFixed(1)} cm, thaw Δ:{' '}
                   {(simB.snapshots[24].thawDepthM - simA.snapshots[24].thawDepthM).toFixed(2)} m
                 </div>
@@ -1291,8 +1292,8 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                       style={{
                         padding: '5px 8px',
                         fontSize: 10,
-                        background: currentYear === y ? '#EAE6DF' : 'transparent',
-                        color: currentYear === y ? '#0C0E10' : '#EAE6DF',
+                        background: currentYear === y ? 'var(--ink-light)' : 'transparent',
+                        color: currentYear === y ? 'var(--ink-dark)' : 'var(--ink-light)',
                         border: '1px solid var(--line)',
                         cursor: 'pointer',
                       }}
@@ -1310,7 +1311,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                   setShowHeatmap(true);
                   setYearIdx(24);
                 }}
-                style={{ padding: '8px', fontSize: 11, background: 'transparent', color: '#8FB8C2', border: '1px solid #8FB8C2', cursor: 'pointer' }}
+                style={{ padding: '8px', fontSize: 11, background: 'transparent', color: 'var(--ice)', border: '1px solid var(--ice)', cursor: 'pointer' }}
               >
                 Drop 1.0 m probe + show °C field @ 2050
               </button>
@@ -1377,7 +1378,7 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
                     textAlign: 'left',
                     padding: '9px 11px',
                     background: 'rgba(234,230,223,0.04)',
-                    color: '#EAE6DF',
+                    color: 'var(--ink-light)',
                     border: '1px solid var(--line)',
                     cursor: 'pointer',
                   }}

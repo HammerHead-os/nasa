@@ -38,9 +38,9 @@ export function TutorialOverlay({
       aria-label="Guide"
       style={{
         flexShrink: 0,
-        background: '#15181C',
-        color: '#EAE6DF',
-        borderBottom: '1px solid rgba(227, 25, 55, 0.55)',
+        background: 'var(--panel)',
+        color: 'var(--ink-light)',
+        borderBottom: '1px solid var(--line-strong)',
         padding: '8px 20px',
         display: 'flex',
         alignItems: 'center',
@@ -54,7 +54,7 @@ export function TutorialOverlay({
           {step.stepNum}
         </span>
         <strong style={{ fontSize: 13, marginRight: 8, fontWeight: 600 }}>{step.heading}</strong>
-        <span style={{ fontSize: 13, color: '#C5C1B9' }}>{step.tip}</span>
+        <span style={{ fontSize: 13, color: 'var(--ink-muted)' }}>{step.tip}</span>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }} className="mono">
@@ -66,8 +66,8 @@ export function TutorialOverlay({
           style={{
             padding: '10px 12px',
             background: 'transparent',
-            color: idx === 0 ? '#555' : '#EAE6DF',
-            border: '1px solid rgba(234,230,223,0.22)',
+            color: idx === 0 ? '#555' : 'var(--ink-light)',
+            border: '1px solid var(--line)',
             fontSize: 11,
             cursor: idx === 0 ? 'default' : 'pointer',
           }}
@@ -99,7 +99,7 @@ export function TutorialOverlay({
             style={{
               padding: '10px 14px',
               background: '#8FB8C2',
-              color: '#0C0E10',
+              color: 'var(--ink-dark)',
               border: 'none',
               fontSize: 11,
               fontWeight: 600,
@@ -117,7 +117,7 @@ export function TutorialOverlay({
           style={{
             background: 'transparent',
             border: 'none',
-            color: '#9A968E',
+            color: 'var(--ink-muted)',
             fontSize: 14,
             cursor: 'pointer',
             padding: '10px 12px',

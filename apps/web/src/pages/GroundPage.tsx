@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { InfoTip } from '../components/InfoTip';
-import { announce, prefersReducedMotion } from '../lib/a11y';
+import { announce, cssVar, prefersReducedMotion } from '../lib/a11y';
 import { assetUrl } from '../lib/assetUrl';
 
 interface Props {
@@ -130,7 +130,7 @@ export function GroundPage({ onNext }: Props) {
 
       ctx.save();
       ctx.scale(dpr, dpr);
-      ctx.fillStyle = '#090B0D';
+      ctx.fillStyle = cssVar('--bg', '#F2F5F6');
       ctx.fillRect(0, 0, w, h);
 
       const pad = 14;
@@ -158,9 +158,9 @@ export function GroundPage({ onNext }: Props) {
             const radarY = y0 + surfaceH;
 
             const shroud = ctx.createLinearGradient(0, radarY - 10, 0, radarY + 24);
-            shroud.addColorStop(0, 'rgba(11,14,17,0)');
-            shroud.addColorStop(0.4, 'rgba(11,14,17,0.95)');
-            shroud.addColorStop(1, 'rgba(11,14,17,0.99)');
+            shroud.addColorStop(0, 'rgba(90,110,118,0)');
+            shroud.addColorStop(0.35, 'rgba(90,110,118,0.55)');
+            shroud.addColorStop(1, 'rgba(74,92,100,0.92)');
             ctx.fillStyle = shroud;
             ctx.fillRect(x0, radarY - 10, cardW, cardH);
 
@@ -190,7 +190,7 @@ export function GroundPage({ onNext }: Props) {
             ctx.beginPath();
             ctx.rect(x0, radarY, cardW, cardH - surfaceH);
             ctx.clip();
-            ctx.strokeStyle = 'rgba(234,230,223,0.1)';
+            ctx.strokeStyle = 'rgba(20,32,40,0.12)';
             for (let hx = -cardH; hx < cardW + cardH; hx += 10) {
               ctx.beginPath();
               ctx.moveTo(x0 + hx, radarY);
@@ -199,13 +199,13 @@ export function GroundPage({ onNext }: Props) {
             }
             ctx.restore();
 
-            ctx.fillStyle = 'rgba(11,14,17,0.92)';
+            ctx.fillStyle = 'rgba(255,255,255,0.88)';
             ctx.fillRect(x0 + 10, radarY - 22, Math.min(cardW - 20, 210), 18);
-            ctx.fillStyle = '#B8D4DC';
+            ctx.fillStyle = '#2F7A88';
             ctx.font = '700 10px DM Mono, monospace';
             ctx.fillText('FROM SPACE: TOP ~80 cm ONLY', x0 + 15, radarY - 9);
 
-            ctx.fillStyle = '#EAE6DF';
+            ctx.fillStyle = '#F4F7F8';
             ctx.font = '700 15px Public Sans, sans-serif';
             ctx.fillText('Soil layers hidden', x0 + 16, radarY + 44);
             ctx.fillStyle = '#FF8A65';
@@ -267,7 +267,7 @@ export function GroundPage({ onNext }: Props) {
             ctx.moveTo(x0 + 58, ly);
             ctx.lineTo(x0 + 72, ly);
             ctx.stroke();
-            ctx.fillStyle = '#EAE6DF';
+            ctx.fillStyle = '#F4F7F8';
             ctx.font = '600 12px Public Sans, sans-serif';
             ctx.fillText(L.name, x0 + 76, ly + 4);
             ctx.fillStyle = '#9A968E';
@@ -309,7 +309,7 @@ export function GroundPage({ onNext }: Props) {
         ctx.strokeStyle = 'rgba(234,230,223,0.22)';
         ctx.strokeRect(x0 + 10, y0 + 10, cardW - 20, 46);
 
-        ctx.fillStyle = '#EAE6DF';
+        ctx.fillStyle = '#F4F7F8';
         ctx.font = '700 14px Public Sans, sans-serif';
         ctx.fillText(`Ground ${site}`, x0 + 16, y0 + 28);
 
@@ -351,7 +351,7 @@ export function GroundPage({ onNext }: Props) {
         style={{
           position: 'relative',
           borderRight: '1px solid var(--line)',
-          background: '#090B0D',
+          background: 'var(--bg)',
           cursor: revealed ? 'default' : 'pointer',
         }}
         onClick={() => {
@@ -402,7 +402,7 @@ export function GroundPage({ onNext }: Props) {
             </InfoTip>
           </h1>
 
-          <p style={{ fontSize: 15, lineHeight: 1.5, color: '#C5C1B9', margin: '0 0 22px' }}>
+          <p style={{ fontSize: 15, lineHeight: 1.5, color: 'var(--ink-muted)', margin: '0 0 22px' }}>
             Open for real soil photos. A is mineral ground. B shows ice wedges that melt and sink.
           </p>
 
@@ -428,7 +428,7 @@ export function GroundPage({ onNext }: Props) {
           ) : (
             <div style={{ padding: '16px', background: 'var(--panel)', border: '1px solid var(--line)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-                <span className="mono" style={{ fontSize: 12, color: '#EAE6DF', fontWeight: 500 }}>
+                <span className="mono" style={{ fontSize: 12, color: 'var(--ink-light)', fontWeight: 500 }}>
                   Year {Math.round(2026 + (meltPct / 100) * 24)}
                 </span>
                 <button
@@ -473,7 +473,7 @@ export function GroundPage({ onNext }: Props) {
                 style={{ width: '100%', marginBottom: 10 }}
               />
 
-              <p className="mono" style={{ fontSize: 12, lineHeight: 1.45, color: '#C9C5BD', margin: 0 }}>
+              <p className="mono" style={{ fontSize: 12, lineHeight: 1.45, color: 'var(--ink-muted)', margin: 0 }}>
                 A mineral: about −{((meltPct / 100) * 5.4).toFixed(1)} cm. B ice wedges: about −
                 {((meltPct / 100) * 29.3).toFixed(1)} cm.
               </p>

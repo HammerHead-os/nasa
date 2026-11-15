@@ -10,7 +10,7 @@ import {
   probeRadiometry,
   type RadarSelection,
 } from '../lib/pipeline';
-import { announce, prefersReducedMotion } from '../lib/a11y';
+import { announce, cssVar, prefersReducedMotion } from '../lib/a11y';
 import { assetUrl } from '../lib/assetUrl';
 
 interface Props {
@@ -265,7 +265,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
 
       ctx.save();
       ctx.scale(dpr, dpr);
-      ctx.fillStyle = '#090B0D';
+      ctx.fillStyle = cssVar('--bg', '#F2F5F6');
       ctx.fillRect(0, 0, w, h);
 
       const pair = pairForMode(mode);
@@ -282,7 +282,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
         }
         ctx.fillStyle = 'rgba(11,14,17,0.88)';
         ctx.fillRect(12, 12, 220, 28);
-        ctx.fillStyle = '#EAE6DF';
+        ctx.fillStyle = '#F4F7F8';
         ctx.font = '700 11px DM Mono, monospace';
         ctx.fillText('OPTICAL — Eight Mile Lake', 20, 30);
       } else if (mode === 'change') {
@@ -368,10 +368,10 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
           ctx.beginPath();
           ctx.arc(zx, zy, 13, 0, Math.PI * 2);
           ctx.fill();
-          ctx.strokeStyle = '#EAE6DF';
+          ctx.strokeStyle = '#F4F7F8';
           ctx.lineWidth = 1.8;
           ctx.stroke();
-          ctx.fillStyle = '#EAE6DF';
+          ctx.fillStyle = '#F4F7F8';
           ctx.font = '700 12px DM Mono, monospace';
           ctx.fillText(String(idx + 1), zx - 4, zy + 4);
         });
@@ -401,7 +401,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
       ctx.strokeRect(14, 14, hudW, gunwOn ? 52 : 58);
       ctx.font = '700 10px DM Mono, monospace';
       ctx.fillStyle =
-        step === 'camera' ? '#EAE6DF' : step === 'dance' ? '#E31937' : step === 'thaw' ? '#E58AC0' : '#8FB8C2';
+        step === 'camera' ? '#F4F7F8' : step === 'dance' ? '#E31937' : step === 'thaw' ? '#E58AC0' : '#8FB8C2';
       const banner = gunwOn
         ? `GUNW browse · ${study.gunw.pair_id} · not lined up to this tile`
         : step === 'camera'
@@ -442,7 +442,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
         ctx.fillRect(cx0, cy0, tw, 22);
         ctx.strokeStyle = 'rgba(200,90,50,0.65)';
         ctx.strokeRect(cx0, cy0, tw, 22);
-        ctx.fillStyle = '#EAE6DF';
+        ctx.fillStyle = '#F4F7F8';
         ctx.fillText(chip, cx0 + 10, cy0 + 15);
       }
 
@@ -477,18 +477,18 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
 
   return (
     <div className="page-split">
-      <div style={{ borderRight: '1px solid var(--line)', display: 'flex', flexDirection: 'column', background: '#090B0D' }}>
+      <div style={{ borderRight: '1px solid var(--line)', display: 'flex', flexDirection: 'column', background: 'var(--bg)' }}>
         <div
           style={{
             padding: '10px 12px',
-            background: '#111418',
+            background: 'var(--panel)',
             borderBottom: '1px solid var(--line)',
             display: 'flex',
             flexDirection: 'column',
             gap: 8,
           }}
         >
-          <div className="mono" style={{ fontSize: 10, color: '#8FB8C2', fontWeight: 700, letterSpacing: '0.06em' }}>
+          <div className="mono" style={{ fontSize: 10, color: 'var(--ice)', fontWeight: 700, letterSpacing: '0.06em' }}>
             NISAR GCOV · Track {track} Frame {String(frame).padStart(3, '0')} · Eight Mile Lake ·{' '}
             {septEp.timestamp_utc.slice(0, 10)} / {novEp.timestamp_utc.slice(0, 10)}
           </div>
@@ -535,8 +535,8 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                       padding: '8px 4px',
                       fontSize: 10,
                       textAlign: 'left',
-                      background: active ? (s.id === 'dance' ? 'var(--rust)' : '#EAE6DF') : 'var(--panel)',
-                      color: active ? (s.id === 'dance' ? '#fff' : '#0C0E10') : '#EAE6DF',
+                      background: active ? (s.id === 'dance' ? 'var(--rust)' : 'var(--ink-light)') : 'var(--panel)',
+                      color: active ? (s.id === 'dance' ? '#fff' : 'var(--ink-dark)') : 'var(--ink-light)',
                       border: '1px solid var(--line-strong)',
                       fontWeight: 700,
                       cursor: 'pointer',
@@ -570,7 +570,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                       fontSize: 10,
                       fontWeight: 700,
                       background: active ? 'var(--rust)' : 'transparent',
-                      color: '#EAE6DF',
+                      color: 'var(--ink-light)',
                       border: '1px solid var(--line-strong)',
                       cursor: 'pointer',
                     }}
@@ -593,7 +593,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                   fontSize: 10,
                   fontWeight: 700,
                   background: showGunw ? '#5A8AA8' : 'transparent',
-                  color: '#EAE6DF',
+                  color: 'var(--ink-light)',
                   border: '1px solid var(--line-strong)',
                   cursor: 'pointer',
                 }}
@@ -625,7 +625,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                 }}
                 style={{ flex: 1, minWidth: 120 }}
               />
-              <span className="mono" style={{ fontSize: 10, color: '#8FB8C2', fontWeight: 700 }}>
+              <span className="mono" style={{ fontSize: 10, color: 'var(--ice)', fontWeight: 700 }}>
                 NOV
               </span>
               <button
@@ -637,7 +637,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                   padding: '8px 12px',
                   fontSize: 10,
                   background: danceAuto ? 'var(--rust)' : 'transparent',
-                  color: '#EAE6DF',
+                  color: 'var(--ink-light)',
                   border: '1px solid var(--line)',
                   cursor: 'pointer',
                   fontWeight: 700,
@@ -767,7 +767,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                     style={{
                       padding: '6px 8px',
                       fontSize: 10,
-                      background: threeDrape === d.id ? 'var(--rust)' : 'rgba(11,14,17,0.85)',
+                      background: threeDrape === d.id ? 'var(--rust)' : 'var(--panel)',
                       color: '#fff',
                       border: '1px solid var(--line-strong)',
                       fontWeight: 700,
@@ -817,7 +817,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
 
         {storyStep !== 'camera' && (
           <div
-            style={{ padding: '12px 18px', background: '#111418', borderTop: '1px solid var(--line-strong)' }}
+            style={{ padding: '12px 18px', background: 'var(--panel)', borderTop: '1px solid var(--line-strong)' }}
             role="list"
             aria-label="Color meaning"
           >
@@ -834,8 +834,8 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                       flexShrink: 0,
                     }}
                   />
-                  <span className="mono" style={{ fontSize: 10, color: '#C5C1B9' }}>
-                    <strong style={{ color: '#EAE6DF' }}>{c.label}</strong>
+                  <span className="mono" style={{ fontSize: 10, color: 'var(--ink-muted)' }}>
+                    <strong style={{ color: 'var(--ink-light)' }}>{c.label}</strong>
                     {' — '}
                     {c.desc}
                   </span>
@@ -882,10 +882,10 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
               marginBottom: 12,
               fontSize: 11,
               lineHeight: 1.55,
-              color: '#C5C1B9',
+              color: 'var(--ink-muted)',
             }}
           >
-            <div style={{ color: '#EAE6DF' }}>
+            <div style={{ color: 'var(--ink-light)' }}>
               {formatLat(pinRadiometry.lat)} {formatLon(pinRadiometry.lon)}
             </div>
             <div style={{ marginTop: 2 }}>
@@ -926,7 +926,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
             })}
           </div>
 
-          <p style={{ fontSize: 13, lineHeight: 1.45, color: '#C5C1B9', margin: '0 0 10px' }}>
+          <p style={{ fontSize: 13, lineHeight: 1.45, color: 'var(--ink-muted)', margin: '0 0 10px' }}>
             {selectedZone.meaning}
           </p>
 
@@ -938,7 +938,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
               marginBottom: sourcesOpen ? 0 : 0,
               padding: '6px 0',
               background: 'transparent',
-              color: '#8FB8C2',
+              color: 'var(--ice)',
               border: 'none',
               fontSize: 11,
               fontWeight: 500,
@@ -955,7 +955,7 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
                 maxHeight: 100,
                 overflow: 'auto',
                 fontSize: 9.5,
-                color: '#9A968E',
+                color: 'var(--ink-muted)',
               }}
             >
               {study.manifest_granules.slice(0, 2).map((g) => (

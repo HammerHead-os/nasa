@@ -4,10 +4,11 @@ import { createPortal } from 'react-dom';
 interface Props {
   title: string;
   children: React.ReactNode;
+  /** @deprecated Theme follows CSS variables; kept for call-site compat. */
   lightTheme?: boolean;
 }
 
-export function InfoTip({ title, children, lightTheme = false }: Props) {
+export function InfoTip({ title, children }: Props) {
   const [hovered, setHovered] = useState(false);
   const [pinned, setPinned] = useState(false);
   const [coords, setCoords] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
@@ -91,15 +92,9 @@ export function InfoTip({ title, children, lightTheme = false }: Props) {
           width: 18,
           height: 18,
           borderRadius: '50%',
-          border: lightTheme
-            ? '1px solid rgba(20, 22, 24, 0.48)'
-            : '1px solid rgba(234, 230, 223, 0.45)',
-          background: open
-            ? 'var(--rust)'
-            : lightTheme
-            ? 'rgba(20, 22, 24, 0.08)'
-            : 'rgba(234, 230, 223, 0.09)',
-          color: open ? '#fff' : lightTheme ? '#141618' : '#EAE6DF',
+          border: '1px solid var(--line-strong)',
+          background: open ? 'var(--rust)' : 'var(--panel)',
+          color: open ? '#fff' : 'var(--ink-light)',
           fontFamily: 'var(--font-serif)',
           fontStyle: 'italic',
           fontSize: 12,
@@ -126,10 +121,10 @@ export function InfoTip({ title, children, lightTheme = false }: Props) {
               left: coords.left,
               width: 280,
               zIndex: 9999,
-              background: '#16191D',
-              color: '#EAE6DF',
-              border: '1px solid rgba(234, 230, 223, 0.4)',
-              boxShadow: '0 16px 38px rgba(0, 0, 0, 0.72)',
+              background: 'var(--panel)',
+              color: 'var(--ink-light)',
+              border: '1px solid var(--line-strong)',
+              boxShadow: '0 12px 28px rgba(20, 32, 40, 0.18)',
               padding: '12px 14px',
               pointerEvents: 'auto',
             }}
@@ -139,7 +134,7 @@ export function InfoTip({ title, children, lightTheme = false }: Props) {
               style={{
                 fontSize: 10.5,
                 fontWeight: 600,
-                color: '#8FB8C2',
+                color: 'var(--ice)',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 marginBottom: 5,
@@ -147,7 +142,7 @@ export function InfoTip({ title, children, lightTheme = false }: Props) {
             >
               {title}
             </div>
-            <div style={{ fontSize: 12.5, lineHeight: 1.5, color: '#EAE6DF', fontFamily: 'var(--font-sans)' }}>
+            <div style={{ fontSize: 12.5, lineHeight: 1.5, color: 'var(--ink-light)', fontFamily: 'var(--font-sans)' }}>
               {children}
             </div>
           </div>,
