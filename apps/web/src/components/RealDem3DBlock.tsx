@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import demRaw from '../data/realTerrainDem.json';
 import { prefersReducedMotion } from '../lib/a11y';
+import { assetUrl } from '../lib/assetUrl';
 
 interface DemData {
   grid_size: number;
@@ -121,9 +122,9 @@ export function RealDem3DBlock({
       t.colorSpace = THREE.SRGBColorSpace;
       t.anisotropy = maxAniso;
     };
-    const texOpt = loader.load('/hires/eml_optical_1024.jpg', prep);
-    const texSept = loader.load('/hires/eml_sar_sept02_1024.jpg', prep);
-    const texNov = loader.load('/hires/eml_sar_nov01_1024.jpg', prep);
+    const texOpt = loader.load(assetUrl('/hires/eml_optical_1024.jpg'), prep);
+    const texSept = loader.load(assetUrl('/hires/eml_sar_sept02_1024.jpg'), prep);
+    const texNov = loader.load(assetUrl('/hires/eml_sar_nov01_1024.jpg'), prep);
     [texOpt, texSept, texNov].forEach(prep);
 
     const surfMat = new THREE.MeshStandardMaterial({

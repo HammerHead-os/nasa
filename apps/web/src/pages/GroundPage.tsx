@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { InfoTip } from '../components/InfoTip';
 import { announce, prefersReducedMotion } from '../lib/a11y';
+import { assetUrl } from '../lib/assetUrl';
 
 interface Props {
   onNext: () => void;
@@ -59,13 +60,13 @@ export function GroundPage({ onNext }: Props) {
 
   useEffect(() => {
     const o = new Image();
-    o.src = '/hires/eml_optical_1024.jpg';
+    o.src = assetUrl('/hires/eml_optical_1024.jpg');
     opticalImgRef.current = o;
     const g = new Image();
-    g.src = '/hires/soil_profile_field.jpg';
+    g.src = assetUrl('/hires/soil_profile_field.jpg');
     gravelImgRef.current = g;
     const ic = new Image();
-    ic.src = '/hires/ice_wedge_headwall.jpg';
+    ic.src = assetUrl('/hires/ice_wedge_headwall.jpg');
     iceImgRef.current = ic;
   }, []);
 

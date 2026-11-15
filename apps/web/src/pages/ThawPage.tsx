@@ -12,6 +12,7 @@ import {
 } from '../lib/livePermafrostEngine';
 import { DISAGREE_THRESHOLD_CM, twinFromColumns, type TwinState } from '../lib/pipeline';
 import { announce, prefersReducedMotion } from '../lib/a11y';
+import { assetUrl } from '../lib/assetUrl';
 
 interface Props {
   physics: PhysicsPayload;
@@ -164,10 +165,10 @@ export function ThawPage({ physics, twin, onTwinChange, onNext }: Props) {
 
   useEffect(() => {
     const g = new Image();
-    g.src = '/hires/gravel_trench.jpg?v=2';
+    g.src = assetUrl('/hires/gravel_trench.jpg?v=2');
     gravelImgRef.current = g;
     const ic = new Image();
-    ic.src = '/hires/ice_wedge_headwall.jpg';
+    ic.src = assetUrl('/hires/ice_wedge_headwall.jpg');
     iceImgRef.current = ic;
   }, []);
 

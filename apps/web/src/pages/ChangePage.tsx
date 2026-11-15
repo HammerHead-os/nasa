@@ -10,6 +10,7 @@ import {
   type ChangePatch,
   type WorldCatalog,
 } from '../lib/worldChange';
+import { assetUrl } from '../lib/assetUrl';
 
 const catalog = catalogRaw as unknown as WorldCatalog;
 
@@ -115,8 +116,8 @@ export function ChangePage({ onOpenScenario }: Props) {
 
   useEffect(() => {
     let cancelled = false;
-    const a = loadImg(early.image);
-    const b = loadImg(late.image);
+    const a = loadImg(assetUrl(early.image));
+    const b = loadImg(assetUrl(late.image));
     const draw = () => {
       if (cancelled) return;
       const canvas = buildChangeCanvas(a, b);
@@ -264,10 +265,10 @@ export function ChangePage({ onOpenScenario }: Props) {
         >
           {mode !== 'change' && (
             <>
-              <img src={early.image} alt={`${site.name} NISAR browse ${formatEpoch(early.id)}`} />
+              <img src={assetUrl(early.image)} alt={`${site.name} NISAR browse ${formatEpoch(early.id)}`} />
               {mode !== 'early' && (
                 <img
-                  src={late.image}
+                  src={assetUrl(late.image)}
                   alt={`${site.name} NISAR browse ${formatEpoch(late.id)}`}
                   style={mode === 'wipe' ? { clipPath: `inset(0 0 0 ${wipe}%)` } : undefined}
                 />

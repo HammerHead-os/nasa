@@ -15,6 +15,7 @@ import {
   type RadarSelection,
   type TwinState,
 } from '../lib/pipeline';
+import { assetUrl } from '../lib/assetUrl';
 
 interface Props {
   study: StudyTilePayload;
@@ -248,7 +249,7 @@ export function DrillPage({ study, physics, radar: radarIn, twin: twinIn, onGoRa
           aria-label={`NISAR September thaw browse with ${ranked.length} ranked drill candidates. Use the table below to select sites.`}
         >
           <img
-            src="/hires/eml_sar_sept02_1024.jpg"
+            src={assetUrl('/hires/eml_sar_sept02_1024.jpg')}
             alt=""
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.92, display: 'block' }}
           />

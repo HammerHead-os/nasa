@@ -11,6 +11,7 @@ import {
   type RadarSelection,
 } from '../lib/pipeline';
 import { announce, prefersReducedMotion } from '../lib/a11y';
+import { assetUrl } from '../lib/assetUrl';
 
 interface Props {
   study: StudyTilePayload;
@@ -179,14 +180,14 @@ export function RadarPage({ study, selection, onSelectionChange, onNext }: Props
   }, [storyStep, danceAuto, productMode, showGunw]);
 
   useEffect(() => {
-    optImgRef.current = loadImg('/hires/eml_optical_1024.jpg');
-    septRgbRef.current = loadImg('/hires/eml_sar_sept02_1024.jpg');
-    novRgbRef.current = loadImg('/hires/eml_sar_nov01_1024.jpg');
-    septHhRef.current = loadImg('/hires/nisar_sept02_native_hhhh.jpg');
-    novHhRef.current = loadImg('/hires/nisar_nov01_native_hhhh.jpg');
-    septNatRgbRef.current = loadImg('/hires/nisar_sept02_native_rgb.jpg');
-    novNatRgbRef.current = loadImg('/hires/nisar_nov01_native_rgb.jpg');
-    gunwRef.current = loadImg('/hires/nisar_gunw_native.jpg');
+    optImgRef.current = loadImg(assetUrl('/hires/eml_optical_1024.jpg'));
+    septRgbRef.current = loadImg(assetUrl('/hires/eml_sar_sept02_1024.jpg'));
+    novRgbRef.current = loadImg(assetUrl('/hires/eml_sar_nov01_1024.jpg'));
+    septHhRef.current = loadImg(assetUrl('/hires/nisar_sept02_native_hhhh.jpg'));
+    novHhRef.current = loadImg(assetUrl('/hires/nisar_nov01_native_hhhh.jpg'));
+    septNatRgbRef.current = loadImg(assetUrl('/hires/nisar_sept02_native_rgb.jpg'));
+    novNatRgbRef.current = loadImg(assetUrl('/hires/nisar_nov01_native_rgb.jpg'));
+    gunwRef.current = loadImg(assetUrl('/hires/nisar_gunw_native.jpg'));
   }, []);
 
   // Rebuild change canvas when HH or RGB assets finish loading / mode needs it

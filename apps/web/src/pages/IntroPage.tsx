@@ -1,3 +1,5 @@
+import { assetUrl } from '../lib/assetUrl';
+
 interface Props {
   onStart: () => void;
 }
@@ -95,7 +97,7 @@ export function IntroPage({ onStart }: Props) {
         >
           <figure style={{ position: 'relative', overflow: 'hidden', margin: 0, height: '100%' }}>
             <img
-              src="/hires/eml_optical_1024.jpg"
+              src={assetUrl('/hires/eml_optical_1024.jpg')}
               alt="Satellite optical view of Eight Mile Lake tundra, Alaska — hills, lake, and sparse shrubs from above"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
@@ -117,7 +119,7 @@ export function IntroPage({ onStart }: Props) {
 
           <figure style={{ position: 'relative', overflow: 'hidden', margin: 0, height: '100%' }}>
             <img
-              src="/hires/ice_wedge_headwall.jpg"
+              src={assetUrl('/hires/ice_wedge_headwall.jpg')}
               alt="Field photograph of a thawing permafrost headwall with pale blue-grey ice wedges in dark soil under tundra vegetation"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
