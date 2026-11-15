@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:02,200
+ICEBOUND  ·  Gitanjali Penumatsa (NUS) & Aniket Mimani (NTU)
+
+2
+00:00:02,200 --> 00:00:05,000
+NASA Space Apps 2026 — Dancing with the SARs
+
+3
+00:00:05,000 --> 00:00:09,500
+ICEBOUND — real NISAR browse, same track, two dates.
+
+4
+00:00:09,500 --> 00:00:15,500
+Five footprints: freeze/thaw, wetland, fields, delta, glacier.
+
+5
+00:00:15,500 --> 00:00:22,000
+Drag the wipe. Patches are detected from the preview — a browse index, not γ⁰.
+
+6
+00:00:22,000 --> 00:00:26,500
+Export a change card: coordinates + granule IDs.
+
+7
+00:00:26,500 --> 00:00:29,500
+ICEBOUND. NISAR surface change — claim kept the size of the data.
+

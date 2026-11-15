@@ -1,0 +1,38 @@
+ICEBOUND — challenge compliance (not a screenshot checklist)
+Updated after the change-atlas rebuild. [x] means the shipped app does this.
+[ ] means it is still outside what this prototype can honestly claim.
+
+RELEVANCE
+[x] First screen is multi-temporal NISAR surface change, already playing.
+[x] Five real footprints: Alaska lake, Louisiana wetland, California fields, Mekong delta, Hubbard Glacier.
+[x] User can switch site, date pair, and detection threshold without a prior page.
+[x] Primary export is a change GeoJSON, not a drill card.
+[ ] Not a global pan-the-world map. New places require the ingest script and a same-track pair.
+[ ] No in-app Earthdata login or arbitrary AOI upload.
+
+VALIDITY
+[x] Change numbers are labeled browse index, not γ⁰ dB.
+[x] No freeze-lag days on the change page or in the change export.
+[x] Patches come from the detector (z · tile std, 4-connected), not from handwritten pin stories.
+[x] Hypotheses are labeled HYPOTHESIS and kept off the measurement.
+[x] Alaska settlement page says scenario / assumed ice / solver check, not an observation.
+[x] Tests cover the detector, the multi-site catalog, and the ban on dB/lag copy on the change page.
+[ ] Browse is still not Level-2 radiometry. Do not let a caption drift back to “HH dB”.
+[ ] GUNW is not used as displacement. Leave it that way.
+[ ] No field partner has checked the Alaska scenario against cores.
+
+IMPACT
+[x] A person can see where the preview changed and take the coordinates away.
+[ ] Nobody has adopted this on a Monday. Do not claim a DOT, an NGO, or a lab is using it.
+
+COMMUNICATION
+[x] One name on the product: ICEBOUND. The job is NISAR surface change.
+[x] 30-second script in submission_copy.txt stays on the wipe and the export.
+[x] CC BY-SA ice-wedge credit is on the scenario page, in the README, and in the submission copy.
+[ ] Record the 30-second video from the change page. The repo does not contain that video file.
+[ ] Put the live URL on the Space Apps form when a deploy exists. The README does not invent one.
+
+STILL EASY TO REGRESS
+- Do not put the soil twin back on the landing page.
+- Do not restore “late freeze +N days” anywhere a judge can read it.
+- Do not describe hh_db_grid in the Alaska scenario as calibrated backscatter.

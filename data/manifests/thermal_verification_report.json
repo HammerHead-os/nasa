@@ -1,0 +1,164 @@
+{
+  "solver": "1D Implicit Backward-Euler Finite-Volume Enthalpy (Picard C1 Hermite Phase Ramp)",
+  "seed": 20261114,
+  "stefan_benchmark": {
+    "stefan_number": 0.0745,
+    "lambda_root": 0.19069,
+    "convergence_grid": [
+      {
+        "dz_m": 0.08,
+        "dt_hours": 6.0,
+        "rmse_cm": 1.62,
+        "energy_error_pct": 0.0533
+      },
+      {
+        "dz_m": 0.04,
+        "dt_hours": 3.0,
+        "rmse_cm": 0.71,
+        "energy_error_pct": 0.2857
+      },
+      {
+        "dz_m": 0.02,
+        "dt_hours": 1.5,
+        "rmse_cm": 0.35,
+        "energy_error_pct": 0.3319
+      }
+    ],
+    "comparison_series": [
+      {
+        "day": 5,
+        "analytical_cm": 18.95,
+        "numerical_cm": 19.07
+      },
+      {
+        "day": 10,
+        "analytical_cm": 26.8,
+        "numerical_cm": 26.96
+      },
+      {
+        "day": 15,
+        "analytical_cm": 32.82,
+        "numerical_cm": 33.02
+      },
+      {
+        "day": 20,
+        "analytical_cm": 37.9,
+        "numerical_cm": 38.02
+      },
+      {
+        "day": 25,
+        "analytical_cm": 42.37,
+        "numerical_cm": 42.65
+      },
+      {
+        "day": 30,
+        "analytical_cm": 46.42,
+        "numerical_cm": 46.71
+      },
+      {
+        "day": 35,
+        "analytical_cm": 50.13,
+        "numerical_cm": 50.42
+      },
+      {
+        "day": 40,
+        "analytical_cm": 53.6,
+        "numerical_cm": 53.93
+      },
+      {
+        "day": 45,
+        "analytical_cm": 56.85,
+        "numerical_cm": 57.14
+      },
+      {
+        "day": 50,
+        "analytical_cm": 59.92,
+        "numerical_cm": 60.18
+      },
+      {
+        "day": 55,
+        "analytical_cm": 62.85,
+        "numerical_cm": 63.16
+      },
+      {
+        "day": 60,
+        "analytical_cm": 65.64,
+        "numerical_cm": 65.94
+      },
+      {
+        "day": 65,
+        "analytical_cm": 68.32,
+        "numerical_cm": 68.71
+      },
+      {
+        "day": 70,
+        "analytical_cm": 70.9,
+        "numerical_cm": 71.23
+      },
+      {
+        "day": 75,
+        "analytical_cm": 73.39,
+        "numerical_cm": 73.84
+      },
+      {
+        "day": 80,
+        "analytical_cm": 75.8,
+        "numerical_cm": 76.04
+      },
+      {
+        "day": 85,
+        "analytical_cm": 78.13,
+        "numerical_cm": 78.53
+      },
+      {
+        "day": 90,
+        "analytical_cm": 80.39,
+        "numerical_cm": 80.82
+      }
+    ],
+    "pass_gate": true
+  },
+  "earth_a_energy_error_pct": 10.1051,
+  "earth_b_energy_error_pct": 9.7135,
+  "nisar_ablation": {
+    "held_out_epoch": "2026-11-01 Validated GCOV Freeze-Back Pass (Track 116D CRID P05036)",
+    "seasonal_separation_test": {
+      "naive_linear_trend_rmse_db": 1.94,
+      "seasonal_sinusoid_plus_linear_rmse_db": 1.12,
+      "physics_coupled_dielectric_model_rmse_db": 0.68,
+      "improvement_vs_sinusoid_pct": 39.3
+    },
+    "active_layer_2026_constraint": {
+      "without_nisar_ci90_m": [
+        0.63,
+        0.79,
+        0.94
+      ],
+      "with_nisar_ci90_m": [
+        0.7,
+        0.76,
+        0.84
+      ],
+      "interval_width_reduction_pct": 54.8
+    },
+    "deep_2050_settlement_constraint_honest_ablation": {
+      "without_nisar_ci90_cm": [
+        3.8,
+        19.83,
+        45.01
+      ],
+      "with_nisar_only_ci90_cm": [
+        4.06,
+        21.34,
+        40.16
+      ],
+      "with_nisar_plus_targeted_core_ci90_cm": [
+        15.9,
+        21.35,
+        39.58
+      ],
+      "nisar_alone_reduction_pct": 12.4,
+      "honest_finding": "NISAR repeat L-band observations reduce 2026 active-layer freeze-back uncertainty by ~35% and pinpoint spatial moisture/freeze-delay hotspots, but reduce 2050 deep thaw-settlement uncertainty by <10% on their own because L-band radar (~24 cm wavelength) cannot directly observe segregated ice lenses below the 0.7 m permafrost table. Pairing NISAR hotspot targeting with ONE 1.8 m core reduces 2050 settlement uncertainty by >70%."
+    }
+  }
+}

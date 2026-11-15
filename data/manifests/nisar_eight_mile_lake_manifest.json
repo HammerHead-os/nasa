@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "project": "ICEBOUND \u2014 NASA Space Apps 2026 (Dancing with the SARs)",
+  "generated_utc": "2026-11-14T01:05:00Z",
+  "study_site": {
+    "id": "eight-mile-lake-ak",
+    "name": "Eight Mile Lake Permafrost Observatory, Healy, Alaska",
+    "program_context": "NASA Arctic-Boreal Vulnerability Experiment (ABoVE) & Schuur Lab Flux/Borehole Supersite",
+    "bbox_wgs84": {
+      "west": -149.38,
+      "south": 63.82,
+      "east": -149.08,
+      "north": 63.95
+    },
+    "center_lat": 63.878,
+    "center_lon": -149.232,
+    "dimensions_km": [
+      14.7,
+      14.5
+    ],
+    "elevation_range_m": [
+      610,
+      940
+    ]
+  },
+  "radiometric_provenance_and_limitations": {
+    "primary_observable": "Geocoded Polarimetric Covariance (GCOV) L-band terrain-corrected backscatter (HH, HV)",
+    "secondary_observable": "Geocoded Unwrapped Interferogram (GUNW) 12-day repeat-pass phase browse (2026-09-02 to 2026-09-14)",
+    "access_tier": "Official NASA/ASF Earthdata Cloud georeferenced browse rasters + CMR UMM-G metadata",
+    "radiometric_scaling_note": "Full 7.5 GB Level-2 HDF5 granules require authenticated Earthdata Login tokens. Pixel grids in this prototype map the official georeferenced GCOV LATLON/NATIVE browse channels across documented terrestrial L-band gamma0 display bounds (HH: -24 to -2 dB; HV: -31 to -9 dB). Backscatter intensity changes reflect surface dielectric (freeze/thaw, soil moisture, snow wetness) and vegetation roughness\u2014NOT direct underground ice imaging or certified vertical subsidence.",
+    "license": "NASA Open Data Policy \u2014 public domain scientific observations (cite NASA/ISRO NISAR & ASF DAAC)"
+  },
+  "gcov_granules": [
+    {
+      "epoch_id": "2026-09-02",
+      "granule_ur": "NISAR_L2_PR_GCOV_029_116_D_056_4005_DHDH_A_20260902T060007_20260902T060039_P05023_N_F_J_001",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "maturity": "PROVISIONAL",
+      "crid": "P05023",
+      "track": 116,
+      "frame": 56,
+      "orbit_direction": "Descending",
+      "wavelength_cm": 23.8,
+      "band": "L-Band (1.257 GHz)",
+      "polarizations": [
+        "HH",
+        "HV"
+      ],
+      "range_bandwidth_mhz": "40 MHz (Freq A) + 5 MHz (Freq B)",
+      "start_time_utc": "2026-09-02T06:00:07.000000Z",
+      "end_time_utc": "2026-09-02T06:00:39.999342Z",
+      "production_time_utc": "2026-09-04T04:46:25.000000Z",
+      "parent_h5_filename": "NISAR_L2_PR_GCOV_029_116_D_056_4005_DHDH_A_20260902T060007_20260902T060039_P05023_N_F_J_001.h5",
+      "parent_h5_size_bytes": 6815744000,
+      "parent_h5_md5": "bc1570ea8543b5f689345c5a13f4d14b",
+      "browse_latlon_sha256": "5b4a9fc7f9e40f121084a6a061adae951c241e80e20b4fda7316194a141ad09a",
+      "frame_bbox": {
+        "west": -153.25639,
+        "east": -146.51823,
+        "south": 62.115,
+        "north": 65.03872
+      }
+    },
+    {
+      "epoch_id": "2026-09-26",
+      "granule_ur": "NISAR_L2_PR_GCOV_031_116_D_056_4005_DHDH_A_20260926T060007_20260926T060039_P05023_N_F_J_001",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "maturity": "PROVISIONAL",
+      "crid": "P05023",
+      "track": 116,
+      "frame": 56,
+      "orbit_direction": "Descending",
+      "wavelength_cm": 23.8,
+      "band": "L-Band (1.257 GHz)",
+      "polarizations": [
+        "HH",
+        "HV"
+      ],
+      "range_bandwidth_mhz": "40 MHz (Freq A) + 5 MHz (Freq B)",
+      "start_time_utc": "2026-09-26T06:00:07.000000Z",
+      "end_time_utc": "2026-09-26T06:00:39.999342Z",
+      "production_time_utc": "2026-09-28T02:37:25.000000Z",
+      "parent_h5_filename": "NISAR_L2_PR_GCOV_031_116_D_056_4005_DHDH_A_20260926T060007_20260926T060039_P05023_N_F_J_001.h5",
+      "parent_h5_size_bytes": 6811549696,
+      "parent_h5_md5": "a05d75be6966d94006ac465cef213bfe",
+      "browse_latlon_sha256": "e848bf1de11067f4e94ade6dadf25bd098292e3973e9e904c113225065d67ab6",
+      "frame_bbox": {
+        "west": -153.27013,
+        "east": -146.53351,
+        "south": 62.10662,
+        "north": 65.03003
+      }
+    },
+    {
+      "epoch_id": "2026-10-20",
+      "granule_ur": "NISAR_L2_PR_GCOV_033_116_D_056_4005_DHDH_A_20261020T060008_20261020T060039_P05023_N_F_J_001",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "maturity": "PROVISIONAL",
+      "crid": "P05023",
+      "track": 116,
+      "frame": 56,
+      "orbit_direction": "Descending",
+      "wavelength_cm": 23.8,
+      "band": "L-Band (1.257 GHz)",
+      "polarizations": [
+        "HH",
+        "HV"
+      ],
+      "range_bandwidth_mhz": "40 MHz (Freq A) + 5 MHz (Freq B)",
+      "start_time_utc": "2026-10-20T06:00:08.000000Z",
+      "end_time_utc": "2026-10-20T06:00:39.999342Z",
+      "production_time_utc": "2026-10-22T02:03:04.000000Z",
+      "parent_h5_filename": "NISAR_L2_PR_GCOV_033_116_D_056_4005_DHDH_A_20261020T060008_20261020T060039_P05023_N_F_J_001.h5",
+      "parent_h5_size_bytes": 6614417408,
+      "parent_h5_md5": "453c24623cfebfe0f57620fac05007c4",
+      "browse_latlon_sha256": "3d44dda4c121d74c02ab4b2c900a07aa22f6d0f46ddf123e379e7ad59185757e",
+      "frame_bbox": {
+        "west": -153.23379,
+        "east": -146.56882,
+        "south": 62.13125,
+        "north": 65.00399
+      }
+    },
+    {
+      "epoch_id": "2026-11-01",
+      "granule_ur": "NISAR_L2_PR_GCOV_034_116_D_056_4005_DHDH_A_20261101T060003_20261101T060039_P05036_N_F_J_001",
+      "collection": "NISAR_L2_GCOV_V1",
+      "maturity": "VALIDATED",
+      "crid": "P05036",
+      "track": 116,
+      "frame": 56,
+      "orbit_direction": "Descending",
+      "wavelength_cm": 23.8,
+      "band": "L-Band (1.257 GHz)",
+      "polarizations": [
+        "HH",
+        "HV"
+      ],
+      "range_bandwidth_mhz": "40 MHz (Freq A) + 5 MHz (Freq B)",
+      "start_time_utc": "2026-11-01T06:00:03.000000Z",
+      "end_time_utc": "2026-11-01T06:00:39.999342Z",
+      "production_time_utc": "2026-11-10T22:34:39.000000Z",
+      "parent_h5_filename": "NISAR_L2_PR_GCOV_034_116_D_056_4005_DHDH_A_20261101T060003_20261101T060039_P05036_N_F_J_001.h5",
+      "parent_h5_size_bytes": 7545552896,
+      "parent_h5_md5": "1a5330a6c924efd148030aef64b262bf",
+      "browse_latlon_sha256": "95eed15f193550ad785ca7389cd1b97c1c9bab28ef321064e6ec7a54a595d942",
+      "frame_bbox": {
+        "west": -153.19695,
+        "east": -146.14663,
+        "south": 62.16538,
+        "north": 65.28853
+      }
+    }
+  ],
+  "gunw_interferogram": {
+    "pair_id": "2026-09-02_2026-09-14",
+    "granule_ur": "NISAR_L2_PR_GUNW_029_116_D_056_030_4000_SH_20260902T060007_20260902T060039_20260914T060007_20260914T060039_P05023_N_F_J_001",
+    "collection": "NISAR_L2_GUNW_PROVISIONAL_V1",
+    "maturity": "PROVISIONAL",
+    "reference_date": "2026-09-02T06:00:07Z",
+    "secondary_date": "2026-09-14T06:00:07Z",
+    "temporal_baseline_days": 12,
+    "browse_image": "/nisar/eml_gunw_20260902_20260914.png",
+    "caution": "Line-of-sight phase includes late-summer soil moisture dielectric phase and atmospheric delay; never equate directly with vertical thaw settlement without multi-pair coherence validation."
+  }
+}

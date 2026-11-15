@@ -1,0 +1,79 @@
+ICEBOUND — SUBMISSION COPY (paste-ready)
+NASA Space Apps 2026 · Challenge: Dancing with the SARs
+Team: Gitanjali Penumatsa (NUS) & Aniket Mimani (NTU)
+Product: NISAR browse-change atlas
+============================================================
+
+
+------------------------------------------------------------
+HIGH-LEVEL SUMMARY (paste first — Global judges read this)
+------------------------------------------------------------
+ICEBOUND shows multi-temporal NISAR L-band surface change at five real
+footprints: Eight Mile Lake (Alaska), the Manchac wetlands (Louisiana),
+San Joaquin fields (California), the Mekong delta (Vietnam), and Hubbard
+Glacier (Alaska). Each site is the same track and frame, twice or more,
+from official ASF georeferenced browse. The first screen is the wipe.
+Patches are detected from that browse, and the export is a GeoJSON change
+card with coordinates, the browse delta, and the granule URs.
+
+The number is a browse luminance index, not calibrated γ⁰. We do not report
+freeze-lag days. An optional Alaska page is a 1D what-if under assumed ice
+content. It is labeled as a scenario, not as an observation.
+
+
+------------------------------------------------------------
+PROJECT DETAILS
+------------------------------------------------------------
+• Challenge fit: visualize NISAR surface change in more than one place —
+  wetland, farmland, glacier, and freeze/thaw — with a date pair the user can
+  change.
+• Method: same-track LATLON browse difference, then 4-connected patches at a
+  user-set threshold (z standard deviations from the tile mean).
+• Output: ICEBOUND change GeoJSON. Primary product. Not a drill certificate.
+• Data: NASA/ISRO NISAR L2 GCOV browse + CMR granule URs, Aug–Nov 2026.
+  Validated and provisional granules are labeled as such.
+• Optional model: 1D enthalpy scenario for Eight Mile Lake only. Stefan check
+  is the solver versus an analytical front, not a valley survey.
+• Honest limit: no Earthdata login, so this build does not read HDF5 γ⁰ or
+  turn GUNW phase into displacement. Adding a footprint means rerunning
+  science/ingest/fetch_nisar_world_sites.py on a new same-track pair.
+
+
+------------------------------------------------------------
+30-SECOND VIDEO
+------------------------------------------------------------
+[0–8s  VISUAL: change page already playing the wipe. Site list visible.]
+“Five NISAR footprints. This is the real browse, same track, two dates.”
+
+[8–16s VISUAL: click Change. A patch outline. Read the index, not a dB claim.]
+“Darker or brighter in the preview. The patch is detected. The threshold moves.”
+
+[16–24s VISUAL: switch to the Mekong or Manchac, then hit Export.]
+“Wetland, fields, glacier, freeze and thaw. Export is the change card:
+coordinates and the granule IDs.”
+
+[24–30s VISUAL: stay on the change page. Do not open the soil column.]
+“ICEBOUND. NISAR surface change, with the claim kept the size of the data.”
+
+Do not open on the soil twin. If a judge asks, the scenario page is a what-if.
+
+
+------------------------------------------------------------
+PHOTO AND DATA CREDIT (required)
+------------------------------------------------------------
+• Ice-wedge photo used as a scenario texture: Drpermafrost, Wikimedia Commons,
+  CC BY-SA 4.0. https://creativecommons.org/licenses/by-sa/4.0/
+• Gravel texture: Wikimedia Commons field photo; full author not verified here.
+  Illustration only.
+• NISAR observations: NASA/ISRO, ASF DAAC. Granule URs ship in the app and in
+  data/manifests/nisar_world_sites.json.
+
+
+------------------------------------------------------------
+AI DISCLOSURE DRAFT
+------------------------------------------------------------
+We used AI coding assistants, including Cursor, to implement the interface,
+refactor the app around the change atlas, and edit submission text. Granule
+selection, the decision to use browse previews instead of claiming calibrated
+backscatter, the detection rule, and the final scientific limits were reviewed
+by the team. Match this paragraph to the AI questions on the Space Apps form.

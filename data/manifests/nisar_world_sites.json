@@ -1,0 +1,275 @@
+{
+  "claim_boundary": "Browse luminance index 0\u2013100 from the official georeferenced ASF LATLON PNG, same track and frame. Not calibrated \u03b3\u2070. Not a measured freeze lag. Not an interferometric displacement.",
+  "sites": [
+    {
+      "id": "eight-mile-lake",
+      "name": "Eight Mile Lake",
+      "region": "Alaska, USA",
+      "process": "Freeze / thaw",
+      "hypothesis": "Autumn darkening is the surface pattern L-band freeze/thaw studies watch for. Four browse dates cannot measure how many days freeze was late.",
+      "bbox": {
+        "west": -149.38,
+        "south": 63.82,
+        "east": -149.08,
+        "north": 63.95
+      },
+      "epochs": [
+        {
+          "id": "2026-09-02",
+          "label": "2026-09-02",
+          "granule_ur": "NISAR_L2_PR_GCOV_029_116_D_056_4005_DHDH_A_20260902T060007_20260902T060039_P05023_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-09-02T06:00:07.000000Z",
+          "track": 116,
+          "frame": 56,
+          "orbit": "Descending",
+          "image": "/nisar/eml_2026-09-02_rgb.png",
+          "browse_sha256": "33f57c6fdcbf56e2494c3a164518f23a7e9d6efd243e9b2e91ad39f005f0b74c",
+          "mean_index": 68.5,
+          "nodata_fraction": 0.0
+        },
+        {
+          "id": "2026-09-26",
+          "label": "2026-09-26",
+          "granule_ur": "NISAR_L2_PR_GCOV_031_116_D_056_4005_DHDH_A_20260926T060007_20260926T060039_P05023_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-09-26T06:00:07.000000Z",
+          "track": 116,
+          "frame": 56,
+          "orbit": "Descending",
+          "image": "/nisar/eml_2026-09-26_rgb.png",
+          "browse_sha256": "278fd5b9669ac4901158a8fddfdd897d133c9f33fea670058774d1d35f4164ad",
+          "mean_index": 70.06999969482422,
+          "nodata_fraction": 0.0
+        },
+        {
+          "id": "2026-10-20",
+          "label": "2026-10-20",
+          "granule_ur": "NISAR_L2_PR_GCOV_033_116_D_056_4005_DHDH_A_20261020T060008_20261020T060039_P05023_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-10-20T06:00:08.000000Z",
+          "track": 116,
+          "frame": 56,
+          "orbit": "Descending",
+          "image": "/nisar/eml_2026-10-20_rgb.png",
+          "browse_sha256": "31ee16dc5c469ca4a3a4237227a8fd4cf0f43372d0696805d72767a30fd0a5e5",
+          "mean_index": 54.209999084472656,
+          "nodata_fraction": 0.0
+        },
+        {
+          "id": "2026-11-01",
+          "label": "2026-11-01",
+          "granule_ur": "NISAR_L2_PR_GCOV_034_116_D_056_4005_DHDH_A_20261101T060003_20261101T060039_P05036_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_V1",
+          "maturity": "VALIDATED",
+          "start_time_utc": "2026-11-01T06:00:03.000000Z",
+          "track": 116,
+          "frame": 56,
+          "orbit": "Descending",
+          "image": "/nisar/eml_2026-11-01_rgb.png",
+          "browse_sha256": "fc63e7f64bfcf3d986c578198df81d081aec85871f85021161a8b604bf5c5222",
+          "mean_index": 47.470001220703125,
+          "nodata_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "id": "manchac",
+      "name": "Manchac wetlands",
+      "region": "Louisiana, USA",
+      "process": "Wetland",
+      "hypothesis": "Swamp and open water between Lakes Maurepas and Pontchartrain. A brighter or darker browse can come from inundation, wind roughening, or vegetation. This is not a flood-extent map.",
+      "bbox": {
+        "west": -90.55,
+        "south": 30.2,
+        "east": -90.15,
+        "north": 30.48
+      },
+      "epochs": [
+        {
+          "id": "2026-08-12",
+          "label": "2026-08-12",
+          "granule_ur": "NISAR_L2_PR_GCOV_027_156_D_073_4005_DHDH_A_20260812T004510_20260812T004544_P05023_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-08-12T00:45:10.000000Z",
+          "track": 156,
+          "frame": 73,
+          "orbit": "Descending",
+          "image": "/nisar/world/manchac_2026-08-12.png",
+          "browse_sha256": "339748cbb6467565be82fee326476cdb8534038e0dd726b85115ed74f0caa934",
+          "mean_index": 30.600000381469727,
+          "nodata_fraction": 0.0
+        },
+        {
+          "id": "2026-10-23",
+          "label": "2026-10-23",
+          "granule_ur": "NISAR_L2_PR_GCOV_033_156_D_073_4005_DHDH_A_20261023T004509_20261023T004544_P05036_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_V1",
+          "maturity": "VALIDATED",
+          "start_time_utc": "2026-10-23T00:45:09.000000Z",
+          "track": 156,
+          "frame": 73,
+          "orbit": "Descending",
+          "image": "/nisar/world/manchac_2026-10-23.png",
+          "browse_sha256": "9eca10fdafbf2f722992035250a82523b0ed55b1a459c5de2c39d6f20abc5e86",
+          "mean_index": 30.739999771118164,
+          "nodata_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "id": "san-joaquin",
+      "name": "San Joaquin fields",
+      "region": "California, USA",
+      "process": "Farmland",
+      "hypothesis": "Irrigated farmland. Browse change can come from harvest, irrigation, or tillage. This is not a crop-type map.",
+      "bbox": {
+        "west": -122.05,
+        "south": 36.85,
+        "east": -121.62,
+        "north": 37.12
+      },
+      "epochs": [
+        {
+          "id": "2026-08-11",
+          "label": "2026-08-11",
+          "granule_ur": "NISAR_L2_PR_GCOV_027_143_D_070_4005_DHDH_A_20260811T030459_20260811T030521_P05023_N_P_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-08-11T03:04:59.000000Z",
+          "track": 143,
+          "frame": 70,
+          "orbit": "Descending",
+          "image": "/nisar/world/san-joaquin_2026-08-11.png",
+          "browse_sha256": "0731ae7b6deb6eb240ab3cce894778e6c9067e7af4f675443d507a4a3a0c793d",
+          "mean_index": 30.56999969482422,
+          "nodata_fraction": 0.261
+        },
+        {
+          "id": "2026-10-22",
+          "label": "2026-10-22",
+          "granule_ur": "NISAR_L2_PR_GCOV_033_143_D_070_4005_DHDH_A_20261022T030458_20261022T030521_P05036_N_P_J_001",
+          "collection": "NISAR_L2_GCOV_V1",
+          "maturity": "VALIDATED",
+          "start_time_utc": "2026-10-22T03:04:58.000000Z",
+          "track": 143,
+          "frame": 70,
+          "orbit": "Descending",
+          "image": "/nisar/world/san-joaquin_2026-10-22.png",
+          "browse_sha256": "2c2be01a9ed1516b739c0890c771a5e27298cdde64ffb0e036ce951c6da31444",
+          "mean_index": 33.86000061035156,
+          "nodata_fraction": 0.235
+        }
+      ]
+    },
+    {
+      "id": "mekong-delta",
+      "name": "Mekong delta",
+      "region": "Vietnam",
+      "process": "Delta / wetland",
+      "hypothesis": "River delta. Browse change can come from rice flooding, harvest, or river stage. This is not a certified inundation product.",
+      "bbox": {
+        "west": 105.95,
+        "south": 10.05,
+        "east": 106.4,
+        "north": 10.45
+      },
+      "epochs": [
+        {
+          "id": "2026-08-11",
+          "label": "2026-08-11",
+          "granule_ur": "NISAR_L2_PR_GCOV_027_155_A_007_4005_DHDH_A_20260811T222741_20260811T222816_P05023_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-08-11T22:27:41.000000Z",
+          "track": 155,
+          "frame": 7,
+          "orbit": "Ascending",
+          "image": "/nisar/world/mekong-delta_2026-08-11.png",
+          "browse_sha256": "59802a0d227db438b58e71456bb40573e103b7d5b9d71ac3254440efd1a8e945",
+          "mean_index": 63.66999816894531,
+          "nodata_fraction": 0.0
+        },
+        {
+          "id": "2026-08-23",
+          "label": "2026-08-23",
+          "granule_ur": "NISAR_L2_PR_GCOV_028_155_A_007_4005_DHDH_A_20260823T222741_20260823T222815_P05023_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-08-23T22:27:41.000000Z",
+          "track": 155,
+          "frame": 7,
+          "orbit": "Ascending",
+          "image": "/nisar/world/mekong-delta_2026-08-23.png",
+          "browse_sha256": "9959560096ecbf5abab79f3f311326b8b0e5a1172882f13f66d28c6cbcf7baf8",
+          "mean_index": 65.41999816894531,
+          "nodata_fraction": 0.0
+        },
+        {
+          "id": "2026-10-22",
+          "label": "2026-10-22",
+          "granule_ur": "NISAR_L2_PR_GCOV_033_155_A_007_4005_DHDH_A_20261022T222741_20261022T222815_P05036_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_V1",
+          "maturity": "VALIDATED",
+          "start_time_utc": "2026-10-22T22:27:41.000000Z",
+          "track": 155,
+          "frame": 7,
+          "orbit": "Ascending",
+          "image": "/nisar/world/mekong-delta_2026-10-22.png",
+          "browse_sha256": "82f7e85e1a26b7e6c6dfebd428e4975ba768364aaea7596a19c04998f6e0f1f7",
+          "mean_index": 64.45999908447266,
+          "nodata_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "id": "hubbard",
+      "name": "Hubbard Glacier",
+      "region": "Alaska, USA",
+      "process": "Glacier",
+      "hypothesis": "Tidewater glacier at the head of Yakutat Bay. Browse change can come from ice, m\u00e9lange, or moraine roughness. This pair is not a velocity or mass-loss measurement.",
+      "bbox": {
+        "west": -139.6,
+        "south": 59.9,
+        "east": -139.15,
+        "north": 60.2
+      },
+      "epochs": [
+        {
+          "id": "2026-08-13",
+          "label": "2026-08-13",
+          "granule_ur": "NISAR_L2_PR_GCOV_027_173_D_058_4005_DHDH_A_20260813T045436_20260813T045515_P05023_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "PROVISIONAL",
+          "start_time_utc": "2026-08-13T04:54:36.000000Z",
+          "track": 173,
+          "frame": 58,
+          "orbit": "Descending",
+          "image": "/nisar/world/hubbard_2026-08-13.png",
+          "browse_sha256": "09ca82b83242afde4d9e7ac7ce61790233ab270286ae7f651817ed4f4da145d1",
+          "mean_index": 45.66999816894531,
+          "nodata_fraction": 0.0
+        },
+        {
+          "id": "2026-10-24",
+          "label": "2026-10-24",
+          "granule_ur": "NISAR_L2_PR_GCOV_033_173_D_058_4005_DHDH_A_20261024T045436_20261024T045514_P05036_N_F_J_001",
+          "collection": "NISAR_L2_GCOV_V1",
+          "maturity": "VALIDATED",
+          "start_time_utc": "2026-10-24T04:54:36.000000Z",
+          "track": 173,
+          "frame": 58,
+          "orbit": "Descending",
+          "image": "/nisar/world/hubbard_2026-10-24.png",
+          "browse_sha256": "10ee8c83510bbae11471be01cfad80f661c5666668b5589109200c0dcea52385",
+          "mean_index": 40.2400016784668,
+          "nodata_fraction": 0.0
+        }
+      ]
+    }
+  ]
+}

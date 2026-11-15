@@ -1,0 +1,44 @@
+eml_optical_1024.jpg
+  Optical browse / terrain context for Eight Mile Lake study area.
+  Used on Start and underground closed panels, and NISAR Photo step.
+
+eml_terrain_drape_1024.jpg / eml_hillshade_1024.jpg
+  DEM-derived hillshade and drape for 3D terrain context.
+
+eml_sar_sept02_1024.jpg / eml_sar_nov01_1024.jpg
+  NISAR L-2 GCOV RGB browse composites (Track 116 / Frame 056).
+  Display remaps — not calibrated γ⁰.
+
+nisar_*_native_*.jpg / nisar_gunw_native.jpg
+  Native NISAR browse products (HHHH / RGB / GUNW).
+  Shown with honesty badges in the app.
+
+gravel_trench.jpg
+  Conglomerate & slate roadcut between Fox and Livengood, Alaska, USA.
+  Wikimedia Commons geologic field photo.
+  Used as Ground A / Earth A texture.
+
+ice_wedge_headwall.jpg
+  Field photograph of exposed ground ice / thawing headwall with ice wedges.
+  Used on Start, Ground B open, and Earth B soil twin.
+
+icewedge_trench.jpg
+  Ice wedge exposed by coastal erosion, Beaufort Sea coast, Canada.
+  Photo: Drpermafrost — Wikimedia Commons — CC BY-SA 4.0
+  https://creativecommons.org/licenses/by-sa/4.0/
+  Kept as alternate archive asset.
+
+buckled_road.jpg
+  Infrastructure damage related to thaw settlement (field context).
+
+soil_profile_field.jpg
+  Real USDA Alfisol soil profile (vertical trench photograph).
+  Public domain — U.S. Department of Agriculture via Wikimedia Commons.
+  Used as Ground A when soil layers are opened.
+
+ice_wedge_headwall.jpg
+  Field photograph of exposed ground ice / thawing headwall with ice wedges.
+  Used as Ground B when soil layers are opened.
+
+soil_column_gravel.png / soil_column_ice.jpg
+  Unused CGI cutaways (kept in folder; not shown in UI).
