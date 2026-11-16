@@ -32,6 +32,8 @@ For Eight Mile Lake only, a 1D enthalpy column can be run under two assumed ice 
 
 ## Run it
 
+Visit the website live at https://hammerhead-os.github.io/nasa/ or run it on your laptop locally.
+
 ```bash
 # Rebuild the five-footprint catalog from NASA CMR + ASF browse (network)
 python3 science/ingest/fetch_nisar_world_sites.py
